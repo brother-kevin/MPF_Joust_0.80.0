@@ -276,22 +276,3 @@ show_player:
             show_tokens:
                 ledoff: l_p2_r3b50k, l_p2_r3b100k, l_p2_r3b150k  
 
-sound_player:
-#Player 1
-    p1_r_3bank_1_shot_hit: r_3drop
-    p1_r_3bank_2_shot_hit: r_3drop
-    p1_r_3bank_3_shot_hit: r_3drop    
-    p1_r_3bank_group_complete:
-        r_3drop:
-            action: stop
-        r_3drop_complete:
-            action: play
-#Player 2
-    p2_r_3bank_1_shot_hit: r_3drop
-    p2_r_3bank_2_shot_hit: r_3drop
-    p2_r_3bank_3_shot_hit: r_3drop    
-    p2_r_3bank_group_complete:
-        r_3drop:
-            action: stop
-        r_3drop_complete:
-            action: play       

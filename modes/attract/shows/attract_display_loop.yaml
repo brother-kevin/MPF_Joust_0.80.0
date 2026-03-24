@@ -5,13 +5,22 @@
     last_game_score_slide:
       action: play
       target: display1
+      transition:
+        type: fade
+        duration: 1s
 - duration: 6s
   slides:
     joust_tips:
       action: play
       target: display1
+      transition:
+        type: fade
+        duration: 1s
 - duration: 6s
   slides:
     mpf_logo:
       action: play
       target: display1
+      transition:
+        type: fade
+        duration: 1s

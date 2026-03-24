@@ -225,22 +225,3 @@ light_player:
         l_p2_3xmulti: black
         l_p2_5xmulti: black
 
-sound_player:
-#Player 1
-    p1_l_3bank_1_shot_hit: l_3drop
-    p1_l_3bank_2_shot_hit: l_3drop
-    p1_l_3bank_3_shot_hit: l_3drop    
-    p1_l_3bank_group_complete:
-        l_3drop:
-            action: stop
-        l_3drop_complete:
-            action: play
-#Player 2
-    p2_l_3bank_1_shot_hit: l_3drop
-    p2_l_3bank_2_shot_hit: l_3drop
-    p2_l_3bank_3_shot_hit: l_3drop    
-    p2_l_3bank_group_complete:
-        l_3drop:
-            action: stop
-        l_3drop_complete:
-            action: play

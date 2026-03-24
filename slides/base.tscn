@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dx1y203abc4d5"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_mixwp"]
+[ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="2_myvl5"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_qjsot"]
+
+[node name="base" type="Control" unique_id=216043651]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_mixwp")
+
+[node name="@ColorRect@20786" type="ColorRect" parent="." unique_id=1333228404]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="@Label@20787" type="Label" parent="." unique_id=1592211308]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 100.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvl5")
+theme_override_font_sizes/font_size = 60
+text = "PLAYER 1"
+horizontal_alignment = 1
+
+[node name="@Label@20788" type="Label" parent="." unique_id=103811817]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvl5")
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("3_qjsot")
+variable_name = "score"
+comma_separate = true

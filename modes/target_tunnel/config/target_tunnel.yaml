@@ -264,17 +264,6 @@ light_player:
 #        l_p1_spinner5k: black
 #        l_p2_spinner1k: black 
 #        l_p2_spinner5k: black
-sound_player:
-#Player 1
-    s_p1_disap_t_1_active: hidden_drop1
-    s_p1_disap_t_2_active: hidden_drop2
-    s_p1_disap_t_roll_active: pterodactyl      
-    s_p1_spin_active: spinner_steps
-#Player 2
-    s_p2_disap_t_1_active: hidden_drop1
-    s_p2_disap_t_2_active: hidden_drop2
-    s_p2_disap_t_roll_active: pterodactyl      
-    s_p2_spin_active: spinner_steps
 sound_pools:
     spinner_steps:
         load: preload

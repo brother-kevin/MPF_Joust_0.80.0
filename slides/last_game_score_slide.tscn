@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bq5nlyt7bds4m"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_6euv3"]
+[ext_resource type="Texture2D" uid="uid://d1nb62wjmfwcj" path="res://images/joust_logo_sm.jpg" id="2_3mvlg"]
+[ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="3_38bva"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_o2oak"]
+
+[node name="last_game_score_slide" type="Control" unique_id=1406089362]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_6euv3")
+
+[node name="@ColorRect@20778" type="ColorRect" parent="." unique_id=1829558634]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1874267553]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 0
+anchor_right = 1.0
+texture = ExtResource("2_3mvlg")
+stretch_mode = 5
+
+[node name="@Label@20779" type="Label" parent="." unique_id=2062581920]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 280.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 40
+text = "LAST GAME"
+horizontal_alignment = 1
+
+[node name="@Label@20780" type="Label" parent="." unique_id=2098501964]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -50.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 70
+text = "PLAYER 1"
+
+[node name="@Label@20781" type="Label" parent="." unique_id=1880462183]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 50.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 95
+text = "0"
+script = ExtResource("4_o2oak")
+variable_type = 1
+variable_name = "p1_score"
+comma_separate = true
+
+[node name="@Label@20782" type="Label" parent="." unique_id=1964883314]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = -100.0
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 70
+text = "PLAYER 2"
+horizontal_alignment = 2
+
+[node name="@Label@20783" type="Label" parent="." unique_id=634189922]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 50.0
+offset_right = -100.0
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 95
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("4_o2oak")
+variable_type = 1
+variable_name = "p2_score"
+comma_separate = true
+
+[node name="@Label@20784" type="Label" parent="." unique_id=1973684392]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 40
+text = "TOTAL
+"
+horizontal_alignment = 1
+
+[node name="@Label@20785" type="Label" parent="." unique_id=861632454]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -140.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("4_o2oak")
+variable_type = 1
+variable_name = "total_score"
+comma_separate = true
+
+[node name="StartMsg" type="Label" parent="." unique_id=760315367]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_38bva")
+theme_override_font_sizes/font_size = 40
+text = "PLAYER 1 PRESS LEFT FLIPPER FOR MENU"
+horizontal_alignment = 1

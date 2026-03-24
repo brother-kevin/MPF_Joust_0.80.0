@@ -136,10 +136,3 @@ shows:
             transition:
                type: push
                direction: left
-sound_player:
-    single_player_start_sound{count==1}: 
-      game_start:
-        action: play
-        events_when_stopped: launch_ball                          
-      player_start:
-        action: stop

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MPFSoundAsset" format=3 uid="uid://b802uyvu4kmmf"]
+
+[ext_resource type="Script" uid="uid://bsvo8cxf10088" path="res://addons/mpf-gmc/classes/mpf_sound_marker.gd" id="1_fh6a7"]
+[ext_resource type="Script" uid="uid://e2h352i1jeqi" path="res://addons/mpf-gmc/classes/mpf_sound.gd" id="2_tj7pa"]
+[ext_resource type="AudioStream" uid="uid://dtuhh0kthv5s3" path="res://sounds/sfx/egg_bonus.wav" id="3_5irce"]
+
+[resource]
+script = ExtResource("2_tj7pa")
+stream = ExtResource("3_5irce")
+bus = "sfx"
+fade_in = 0.0
+fade_out = 0.0
+loops = 0
+start_at = 0.0
+max_queue_time = 0.0
+markers = Array[ExtResource("1_fh6a7")]([])

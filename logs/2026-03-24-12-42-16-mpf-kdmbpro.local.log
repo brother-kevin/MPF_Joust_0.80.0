@@ -1,0 +1,26 @@
+2026-03-24 12:42:16,690 : INFO : root : Loading config.
+2026-03-24 12:42:16,691 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2026-03-24 12:42:16,691 : WARNING : ConfigProcessor : Config file in cache changed: /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml
+2026-03-24 12:42:16,691 : INFO : ConfigProcessor : Loading config from file /Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/mpfconfig.yaml.
+2026-03-24 12:42:16,694 : INFO : ConfigProcessor : Loading config: /Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/mpfconfig.yaml
+2026-03-24 12:42:16,695 : INFO : ConfigProcessor : Loading config from file /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml.
+2026-03-24 12:42:16,702 : INFO : ConfigProcessor : Loading config: /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml
+2026-03-24 12:42:39,066 : ERROR : root : Shutdown because of SIGINT or keyboard interrupt.
+Traceback (most recent call last):
+  File "/Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/commands/game.py", line 220, in __init__
+    config = config_loader.load_mpf_config()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/core/config_loader.py", line 164, in load_mpf_config
+    machine_config = self._load_mpf_machine_config(config_spec)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/core/config_loader.py", line 188, in _load_mpf_machine_config
+    return self.config_processor.load_config_files_with_cache(config_files, "machine", config_spec=config_spec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/core/config_processor.py", line 118, in load_config_files_with_cache
+    file_config, file_subfiles = self._load_config_file_and_return_loaded_files(configfile, config_type,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/core/config_processor.py", line 196, in _load_config_file_and_return_loaded_files
+    self._check_sections(config_spec, config, config_type, filename, ignore_unknown_sections)
+  File "/Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/core/config_processor.py", line 173, in _check_sections
+    raise ConfigFileError('Found a "{}:" section in config file {}, '
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigProcessor: Found a "mpf-gmc:" section in config file /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml, but that section name is unknown. Did you mean "mpf:" instead?. Context: /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml Error Code: CFE-ConfigProcessor-3 (https://missionpinball.org/latest/logs)

@@ -1,0 +1,7 @@
+2026-03-24 11:46:31,468 : INFO : root : Loading config.
+2026-03-24 11:46:31,481 : INFO : ConfigProcessor : Config spec file cache created: /var/folders/00/ylwc4t4x1nbgf6x1wcdqzzr00000gn/T/config_spec.mpf_cache
+2026-03-24 11:46:31,481 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2026-03-24 11:46:31,481 : INFO : ConfigProcessor : Loading config from file /Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/mpfconfig.yaml.
+2026-03-24 11:46:31,484 : INFO : ConfigProcessor : Loading config: /Users/kevin/Library/Python/3.11/lib/python/site-packages/mpf/mpfconfig.yaml
+2026-03-24 11:46:31,484 : INFO : ConfigProcessor : Loading config from file /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml.
+2026-03-24 11:46:31,491 : INFO : ConfigProcessor : Loading config: /Users/kevin/Documents/antigravity_workspace/MPF_Joust_0.80.0/config/config.yaml

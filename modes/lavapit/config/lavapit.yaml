@@ -116,12 +116,3 @@ show_player:
                 led: l_p1_eject_hole, l_p2_eject_hole
                 color: tt_blue
             priority: 1
-sound_player:
-#Player1
-    s_p1_eject_hole_active:
-        eject_hole:
-           action: play      
-#Player2
-    s_p2_eject_hole_active:
-        eject_hole:
-           action: play

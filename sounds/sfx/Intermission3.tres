@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MPFSoundAsset" format=3 uid="uid://bdexslfhhdqel"]
+
+[ext_resource type="Script" uid="uid://bsvo8cxf10088" path="res://addons/mpf-gmc/classes/mpf_sound_marker.gd" id="1_ahj5o"]
+[ext_resource type="Script" uid="uid://e2h352i1jeqi" path="res://addons/mpf-gmc/classes/mpf_sound.gd" id="2_b20sp"]
+[ext_resource type="AudioStream" uid="uid://11xjhw81o3wv" path="res://sounds/sfx/Intermission3.wav" id="3_khh6b"]
+
+[resource]
+script = ExtResource("2_b20sp")
+stream = ExtResource("3_khh6b")
+bus = "sfx"
+fade_in = 0.0
+fade_out = 0.0
+loops = 0
+start_at = 0.0
+max_queue_time = 0.0
+markers = Array[ExtResource("1_ahj5o")]([])

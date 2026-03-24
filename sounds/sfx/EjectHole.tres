@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MPFSoundAsset" format=3 uid="uid://dfsih471o7wry"]
+
+[ext_resource type="Script" uid="uid://bsvo8cxf10088" path="res://addons/mpf-gmc/classes/mpf_sound_marker.gd" id="1_c1wq4"]
+[ext_resource type="Script" uid="uid://e2h352i1jeqi" path="res://addons/mpf-gmc/classes/mpf_sound.gd" id="2_63ox2"]
+[ext_resource type="AudioStream" uid="uid://bfvchedrfg0r0" path="res://sounds/sfx/EjectHole.wav" id="3_tkn48"]
+
+[resource]
+script = ExtResource("2_63ox2")
+stream = ExtResource("3_tkn48")
+bus = "sfx"
+fade_in = 0.0
+fade_out = 0.0
+loops = 0
+start_at = 0.0
+max_queue_time = 0.0
+markers = Array[ExtResource("1_c1wq4")]([])

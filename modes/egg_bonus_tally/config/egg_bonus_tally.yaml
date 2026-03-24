@@ -74,31 +74,6 @@ timers:
         action: restart        
       - event: egg_bonus_tally_complete
         action: stop         
-sound_player: 
-    play_egg_bonus_sound:  
-      egg_bonus:
-        action: play
-    p1_multiplier_count_down:
-      egg_bonus:
-        action: play
-    timer_p1_egg_bonus_score_complete: 
-      egg_bonus:
-        action: stop
-      pterodactyl:
-        action: play
-        events_when_stopped: p1_multiplier_count_down           
-    p2_multiplier_count_down:
-      egg_bonus:
-        action: play
-    timer_p2_egg_bonus_score_complete: 
-      egg_bonus:
-        action: stop
-      pterodactyl:
-        action: play
-        events_when_stopped: p2_multiplier_count_down          
-    egg_bonus_tally_complete:
-      egg_bonus:
-        action: stop           
 light_player:
     start_p1_egg_bonus_score{device.counters.p1_multiplier.value==1}:
         l_p1_2xmulti: black

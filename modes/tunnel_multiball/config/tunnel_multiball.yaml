@@ -68,8 +68,6 @@ variable_player:
         timer_tunnel_multiball_variable:
             int: ticks
             action: set
-sound_player:
-    timer_tunnel_multiball_tick: timer_pulse
 shows:
     tunnel_multiball_flash:
         - duration: 200ms

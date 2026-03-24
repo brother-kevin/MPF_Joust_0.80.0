@@ -9,8 +9,7 @@ class HeadToHeadGame(Game):
         self.log.debug("Head To Head Game init")
         self.lives_max = 6 #AD - changed to 2 for testing purposes
 
-    @asyncio.coroutine
-    def _start_ball(self, is_extra_ball=False):
+    async def _start_ball(self, is_extra_ball=False):
         """Start Head to Head ball."""
         self.debug_log("***************************************************")
         self.debug_log("****************** BALL STARTING ******************")
@@ -23,13 +22,13 @@ class HeadToHeadGame(Game):
         self.debug_log("***************************************************")
         self.debug_log("***************************************************")
 
-        yield from self.machine.events.post_async('ball_will_start',
+        await self.machine.events.post_async('ball_will_start',
                                                   is_extra_ball=is_extra_ball)
         '''event: ball_will_start
         desc: The ball is about to start. This event is posted just before
         :doc:`ball_starting`.'''
 
-        yield from self.machine.events.post_queue_async(
+        await self.machine.events.post_queue_async(
             'ball_starting',
             balls_remaining=self.balls_per_game - self.player.ball,
             is_extra_ball=is_extra_ball)
@@ -47,7 +46,7 @@ class HeadToHeadGame(Game):
 
         self.debug_log("ball_started for Ball %s", self.player.ball)
 
-        yield from self.machine.events.post_async('ball_started',
+        await self.machine.events.post_async('ball_started',
                                                   ball=self.player.ball,
                                                   player=self.player.number)
         '''event: ball_started
@@ -57,14 +56,14 @@ class HeadToHeadGame(Game):
         player: The player number.'''
 
         if self.num_players == 1:
-            yield from self.machine.events.post_async('single_player_ball_started')
+            await self.machine.events.post_async('single_player_ball_started')
             '''event: single_player_ball_started
             desc: A new ball has started, and this is a single player game.'''
         else:
-            yield from self.machine.events.post_async('multi_player_ball_started')
+            await self.machine.events.post_async('multi_player_ball_started')
             '''event: multi_player_ball_started
             desc: A new ball has started, and this is a multiplayer game.'''
-            yield from self.machine.events.post_async(
+            await self.machine.events.post_async(
                 'player_{}_ball_started'.format(self.player.number))
             '''event player_(number)_ball_started
             desc: A new ball has started, and this is a multiplayer game.
