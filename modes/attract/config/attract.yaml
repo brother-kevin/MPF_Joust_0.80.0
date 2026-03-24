@@ -28,8 +28,8 @@ show_player:
             speed: 1
             priority: 1        
         attract_display_loop:
-            speed: 1
-            priority: 2
+            action: play
+
         attract_light_show:
             speed: 8
             priority: 4

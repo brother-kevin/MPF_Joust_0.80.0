@@ -64,15 +64,6 @@ variable_player:
       int: 0
       action: set
 
-slide_player:
-  sw_end_game_active: reset_countdown_slide # Show the slide as soon as the switch is pressed
-  sw_end_game_inactive: # Remove the slide if the switch is released or if the timer finishes
-    reset_countdown_slide:
-      action: remove
-  timer_reset_hold_timer_complete:
-    reset_countdown_slide:
-      action: remove
-
 show_player:
     mode_base_started:
         base_gi:
@@ -89,25 +80,14 @@ show_player:
             show_tokens:
                 led: l_p1_release
                 color: tt_green
-sound_player:
-#Player1
-    balldevice_bd_launcher_back_ejecting_ball: explosion
-#Player2
-    balldevice_bd_launcher_front_ejecting_ball: explosion
 
-slides:
-  reset_countdown_slide:
-    widgets:
-      - type: text
-        text: RESETTING IN
-        font_name: joust
-        font_size: 40
-        color: red
-        y: 60%
-      - type: text
-        # This dynamically pulls the current value from the timer
-        text: (reset_progress_var)
-        font_size: 80
-        font_name: joust
-        color: red
-        y: 40%
+slide_player:
+  mode_base_started: base
+
+sound_player:
+  ball_started: GameStartExplosions
+  s_p1_l_flipper_button_active: FlipperFlap
+  s_p1_r_flipper_button_active: FlipperFlap
+  s_p2_l_flipper_button_active: FlipperFlap
+  s_p2_r_flipper_button_active: FlipperFlap
+  ball_drain: BallDrainIntoTrough
