@@ -4,7 +4,9 @@ mode:
     start_events: ball_starting
     priority: 960
     events_when_started: enable_prevent_drain
+
 event_player:
+
   timer_reset_hold_timer_complete: 
     - disableAutofire #disable the flippers and slingshot autofire
     - disable_p1_flipper
@@ -88,6 +90,8 @@ sound_player:
   ball_started: GameStartExplosions
   s_p1_l_flipper_button_active: FlipperFlap
   s_p1_r_flipper_button_active: FlipperFlap
+  s_p1_l_flipper_button_far_active: FlipperFlap
+  s_p1_r_flipper_button_far_active: FlipperFlap
   s_p2_l_flipper_button_active: FlipperFlap
   s_p2_r_flipper_button_active: FlipperFlap
   ball_drain: BallDrainIntoTrough

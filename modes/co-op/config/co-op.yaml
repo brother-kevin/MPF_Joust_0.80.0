@@ -2,7 +2,7 @@
 #this mode is a branch of the "base" mode for a cooperative game where the score is combined and the lives are combined
 
 mode:
-    start_events: carousel_co-op_selected #changed from ball_starting so that the carousel starts with ball starting
+    start_events: carousel_co-op_selected
     priority: 803
 event_player:
     mode_co-op_started:

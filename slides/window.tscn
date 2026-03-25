@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://b7l2vx2o7yb2q" path="res://addons/mpf-gmc/classes/mpf_window.gd" id="1_xdkmp"]
 [ext_resource type="Script" uid="uid://cnc7dblwai6nd" path="res://addons/mpf-gmc/classes/mpf_display.gd" id="2_rep5c"]
 
-[node name="window" type="Control" unique_id=666121301]
+[node name="window" type="Control" unique_id=1150626151]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_xdkmp")
 
-[node name="display1" type="Control" parent="." unique_id=1203935975]
+[node name="display1" type="Control" parent="." unique_id=1469763547]
 anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0

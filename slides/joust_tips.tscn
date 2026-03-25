@@ -4,32 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://d1nb62wjmfwcj" path="res://images/joust_logo_sm.jpg" id="2_u0gm6"]
 [ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="3_o0xhv"]
 
-[node name="joust_tips" type="Control" unique_id=2082404776]
+[node name="joust_tips" type="Control" unique_id=1075881708]
 layout_mode = 3
 anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_nuqji")
 
-[node name="@ColorRect@20777" type="ColorRect" parent="." unique_id=2123494181]
+[node name="@ColorRect@25567" type="ColorRect" parent="." unique_id=1829673880]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
-[node name="Logo" type="TextureRect" parent="." unique_id=583977239]
-custom_minimum_size = Vector2(0, 300)
+[node name="Logo" type="TextureRect" parent="." unique_id=175173907]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 0
 anchor_right = 1.0
 texture = ExtResource("2_u0gm6")
 stretch_mode = 5
 
-[node name="TipsList" type="Label" parent="." unique_id=420969773]
+[node name="TipsList" type="VBoxContainer" parent="." unique_id=639043691]
 layout_mode = 0
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_right = 1.0
+offset_top = 213.0
+
+[node name="@Label@25568" type="Label" parent="TipsList" unique_id=12894850]
+custom_minimum_size = Vector2(1024, 0)
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_o0xhv")
 theme_override_font_sizes/font_size = 32
@@ -46,8 +48,9 @@ Knocking down all 3 drop targets resets opponent's
 3 balls each player then 30 second Multiball"
 horizontal_alignment = 1
 
-[node name="StartMsg" type="Label" parent="." unique_id=501622762]
-layout_mode = 0
+[node name="StartMsg" type="Label" parent="." unique_id=2110338805]
+layout_mode = 1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

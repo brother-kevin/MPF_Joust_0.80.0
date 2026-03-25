@@ -2,42 +2,79 @@
 
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_mixwp"]
 [ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="2_myvl5"]
+[ext_resource type="Texture2D" uid="uid://d1nb62wjmfwcj" path="res://images/joust_logo_sm.jpg" id="2_qjsot"]
 [ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_qjsot"]
 
-[node name="base" type="Control" unique_id=216043651]
+[node name="Root" type="Control" unique_id=1094688584]
 layout_mode = 3
 anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_mixwp")
 
-[node name="@ColorRect@20786" type="ColorRect" parent="." unique_id=1333228404]
+[node name="@ColorRect@25570" type="ColorRect" parent="." unique_id=1921237577]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
-[node name="@Label@20787" type="Label" parent="." unique_id=1592211308]
+[node name="Logo" type="TextureRect" parent="." unique_id=1863883489]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 0
 anchor_right = 1.0
-offset_top = 100.0
+texture = ExtResource("2_qjsot")
+stretch_mode = 5
+
+[node name="P1Lbl" type="Label" parent="." unique_id=1456195088]
+layout_mode = 0
+offset_top = 310.0
+offset_right = 576.0
+offset_bottom = 410.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_myvl5")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 70
 text = "PLAYER 1"
 horizontal_alignment = 1
 
-[node name="@Label@20788" type="Label" parent="." unique_id=103811817]
+[node name="P1Score" type="Label" parent="." unique_id=941267978]
 layout_mode = 0
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+offset_top = 420.0
+offset_right = 576.0
+offset_bottom = 540.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_myvl5")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 95
 text = "0"
 horizontal_alignment = 1
 script = ExtResource("3_qjsot")
-variable_name = "score"
+variable_name = "p1_score"
 comma_separate = true
+initialize_empty = false
+
+[node name="P2Lbl" type="Label" parent="." unique_id=892544617]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 310.0
+offset_right = 1152.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0.003921569, 0.5372549, 1, 1)
+theme_override_fonts/font = ExtResource("2_myvl5")
+theme_override_font_sizes/font_size = 70
+text = "PLAYER 2"
+horizontal_alignment = 1
+
+[node name="P2Score" type="Label" parent="." unique_id=1773890745]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 420.0
+offset_right = 1152.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.003921569, 0.5372549, 1, 1)
+theme_override_fonts/font = ExtResource("2_myvl5")
+theme_override_font_sizes/font_size = 95
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("3_qjsot")
+variable_name = "p2_score"
+comma_separate = true
+initialize_empty = false

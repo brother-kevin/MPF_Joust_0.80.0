@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cefe1bpqrvqtk"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_exka6"]
+[ext_resource type="Texture2D" uid="uid://d1nb62wjmfwcj" path="res://images/joust_logo_sm.jpg" id="2_l3jhp"]
+[ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="3_gpnxf"]
+
+[node name="carousel_cooperative" type="Control" unique_id=1079749100]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_exka6")
+
+[node name="@ColorRect@25572" type="ColorRect" parent="." unique_id=1084845657]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1784760695]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+anchor_right = 1.0
+texture = ExtResource("2_l3jhp")
+stretch_mode = 5
+
+[node name="SelectHeaderLbl" type="Label" parent="." unique_id=1454837622]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 280.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_gpnxf")
+theme_override_font_sizes/font_size = 60
+text = "SELECT GAME MODE"
+horizontal_alignment = 1
+
+[node name="Mode1Lbl" type="Label" parent="." unique_id=1060763783]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 380.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_gpnxf")
+theme_override_font_sizes/font_size = 44
+text = "COMPETITIVE: 2-PLAYER JOUST"
+horizontal_alignment = 1
+
+[node name="Mode2Lbl" type="Label" parent="." unique_id=1774749617]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 460.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_gpnxf")
+theme_override_font_sizes/font_size = 56
+text = ">> CO-OPERATIVE: COMBINED SCORE <<"
+horizontal_alignment = 1
+
+[node name="Mode3Lbl" type="Label" parent="." unique_id=544476467]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 540.0
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_gpnxf")
+theme_override_font_sizes/font_size = 44
+text = "SINGLE PLAYER JOUST"
+horizontal_alignment = 1
+
+[node name="InstrLbl" type="Label" parent="." unique_id=163608212]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gpnxf")
+theme_override_font_sizes/font_size = 36
+text = "LEFT FLIPPER TO ROTATE      RIGHT FLIPPER TO SELECT"
+horizontal_alignment = 1

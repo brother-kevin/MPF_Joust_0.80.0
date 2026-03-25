@@ -1,385 +1,74 @@
 #config_version=6
+# Carousel mode: shows game mode menu, A cycles, L selects
 mode:
-  start_events: ball_starting
+  start_events: machine_reset_phase_3
   stop_events: carousel_item_selected
   code: mpf.modes.carousel.code.carousel.Carousel
-  use_wait_queue: true
-  #game_mode: false
+  game_mode: false
+  priority: 1000
+
 mode_settings:
   selectable_items: double_player, co-op, single_player
-  select_item_events: s_p1_r_flipper_button_inactive, s_start_inactive
-  next_item_events: s_p1_l_flipper_button_inactive
+  select_item_events: s_p1_r_flipper_button_active
+  next_item_events: s_p1_l_flipper_button_active
   previous_item_events: s_p1_hunter_bull_3_inactive
-  block_events: flipper_cancel #what is this - check this may need to be same as select_item_events
-  release_events: both_flippers_inactive
-event_player:
-  select_double_player: mode_double_player_start 
-  select_co-op: mode_co-op_start 
-  select_single_player: mode_single_player_start
+  wrap_items: true
 
-show_player:
-    carousel_double_player_highlighted:
-        double_player_vs:
-            action: play
-        single_player:
-            action: stop
-        P2_score:
-            show_tokens:
-                txt: "2PLAYER"
-    carousel_co-op_highlighted:
-        double_player_vs:
-            action: stop
-        double_player_co-op:
-            action: play
-        P2_score:
-            show_tokens:
-                txt: "-CO-OP-"
-    carousel_single_player_highlighted:
-        double_player_co-op:
-            action: stop
-        single_player:
-            action: play
-        P2_score:
-            show_tokens:
-                txt: "-------"
-    mode_carousel_started:
-        sequenceColor:
-            speed: 6
-            priority: 5
-            show_tokens:
-                color: tt_white
-                led: l_left_flipper1
-                ledB: l_right_flipper1
-                ledC: l_left_flipper2
-                ledD: l_right_flipper2
-        quickflashColor:
-            speed: 1
-            show_tokens:
-                color: green
-                led: l_start
-shows:
-    double_player_vs:
-      - duration: 3  
-        segment_displays:
-         neoSeg0:
-            text: " DUAL "
-            transition:
-               type: push
-               direction: left   
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: "  PRESS"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " RIGHT "
-            transition:
-               type: push
-               direction: left
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "FLIPPER"
-            transition:
-               type: push
-               direction: left                               
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "   BUTTON"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "   for  "
-            transition:
-               type: push
-               direction: left
-      - duration: 3  
-        segment_displays:
-         neoSeg0:
-            text: "2PLAYER"
-            transition:
-               type: push
-               direction: left      
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " JOUST "
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "  or  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: "  PRESS"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " LEFT "
-            transition:
-               type: push
-               direction: left
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "FLIPPER"
-            transition:
-               type: push
-               direction: left                               
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: " BUTTON"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "   to  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " SELECT"
-            transition:
-               type: push
-               direction: left 
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "  or  "
-            transition:
-               type: push
-               direction: left                          
-    double_player_co-op:
-      - duration: 3  
-        segment_displays:
-         neoSeg0:
-            text: "-CO-OP-"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: "  PRESS"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " RIGHT "
-            transition:
-               type: push
-               direction: left
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "FLIPPER"
-            transition:
-               type: push
-               direction: left                               
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: " BUTTON"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "   for  "
-            transition:
-               type: push
-               direction: left
-      - duration: 3  
-        segment_displays:
-         neoSeg0:
-            text: "-CO-OP-"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "  or  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: "  PRESS"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " LEFT "
-            transition:
-               type: push
-               direction: left
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "FLIPPER"
-            transition:
-               type: push
-               direction: left                               
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: " BUTTON"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "   to  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " SELECT"
-            transition:
-               type: push
-               direction: left 
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "  or  "
-            transition:
-               type: push
-               direction: left           
-    single_player:
-      - duration: 3  
-        segment_displays:
-         neoSeg0:
-            text: " SINGLE"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: "  PRESS"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " RIGHT "
-            transition:
-               type: push
-               direction: left
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "FLIPPER"
-            transition:
-               type: push
-               direction: left                               
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: " BUTTON"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "   to  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " JOUST "
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "  or  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: "  PRESS"
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " LEFT "
-            transition:
-               type: push
-               direction: left
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: "FLIPPER"
-            transition:
-               type: push
-               direction: left                               
-      - duration: 1  
-        segment_displays:
-         neoSeg0:
-            text: " BUTTON"
-            transition:
-               type: push
-               direction: left
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "   to  "
-            transition:
-               type: push
-               direction: left
-      - duration: 2  
-        segment_displays:
-         neoSeg0:
-            text: " SELECT"
-            transition:
-               type: push
-               direction: left 
-      - duration: .5  
-        segment_displays:
-         neoSeg0:
-            text: "  or  "
-            transition:
-               type: push
-               direction: left           
+# Translate generic carousel events into per-item events
+event_player:
+  carousel_item_highlighted{item=="double_player"}:
+    show_carousel_competitive: {}
+  carousel_item_highlighted{item=="co-op"}:
+    show_carousel_cooperative: {}
+  carousel_item_highlighted{item=="single_player"}:
+    show_carousel_single: {}
+  carousel_item_selected{item=="double_player"}:
+    carousel_double_player_selected: {}
+  carousel_item_selected{item=="co-op"}:
+    carousel_co-op_selected: {}
+  carousel_item_selected{item=="single_player"}:
+    carousel_single_player_selected: {}
+  carousel_item_selected:
+    s_start_active: {}
+
+slide_player:
+  # Initial slide on mode start
+  mode_carousel_started:
+    carousel_competitive:
+      action: play
+      priority: 9999
+      target: display1
+  # Each highlight event: remove ALL carousel slides, then play the correct one
+  show_carousel_competitive:
+    carousel_cooperative:
+      action: remove
+      target: display1
+    carousel_single:
+      action: remove
+      target: display1
+    carousel_competitive:
+      action: play
+      priority: 9999
+      target: display1
+  show_carousel_cooperative:
+    carousel_competitive:
+      action: remove
+      target: display1
+    carousel_single:
+      action: remove
+      target: display1
+    carousel_cooperative:
+      action: play
+      priority: 9999
+      target: display1
+  show_carousel_single:
+    carousel_competitive:
+      action: remove
+      target: display1
+    carousel_cooperative:
+      action: remove
+      target: display1
+    carousel_single:
+      action: play
+      priority: 9999
+      target: display1

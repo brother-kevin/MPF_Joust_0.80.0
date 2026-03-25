@@ -18,7 +18,6 @@ ball_holds:
     enable_events: mode_attract_started #machine_reset_complete # Enables the hold when the machine starts/resets
     disable_events: mode_base_started # Disables the hold when a game starts
     release_one_events: balldevice_bd_trough_back_ball_count_changed{balls>=3}
-    # release_all_events: game_starting # Optional: Ejects any held balls when a game starts
 
 show_player:
     mode_attract_started: 

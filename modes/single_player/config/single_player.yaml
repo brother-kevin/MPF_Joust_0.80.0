@@ -2,7 +2,7 @@
 #this mode is a branch of the "base" mode for a single player game
 
 mode:
-    start_events: carousel_single_player_selected #changed from ball_starting so that the carousel starts with ball starting
+    start_events: carousel_single_player_selected
     priority: 801
 event_player:
     mode_single_player_started:

@@ -8,9 +8,3 @@
 script = ExtResource("2_l7vdw")
 stream = ExtResource("3_8x27n")
 bus = "sfx"
-fade_in = 0.0
-fade_out = 0.0
-loops = 0
-start_at = 0.0
-max_queue_time = 0.0
-markers = Array[ExtResource("1_0ip3e")]([])

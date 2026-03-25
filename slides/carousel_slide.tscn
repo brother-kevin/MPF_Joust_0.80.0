@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cu2fhtuos3jn2"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_rrxtm"]
+[ext_resource type="Texture2D" uid="uid://d1nb62wjmfwcj" path="res://images/joust_logo_sm.jpg" id="2_p56tq"]
+[ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="3_gn2ib"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_ym3x3"]
+
+[node name="carousel_slide" type="Control" unique_id=926392374]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_rrxtm")
+
+[node name="@ColorRect@23465" type="ColorRect" parent="." unique_id=1128868868]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=197422008]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+anchor_right = 1.0
+texture = ExtResource("2_p56tq")
+stretch_mode = 5
+
+[node name="SelectHeaderLbl" type="Label" parent="." unique_id=1079522574]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 280.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_gn2ib")
+theme_override_font_sizes/font_size = 60
+text = "SELECT GAME MODE"
+horizontal_alignment = 1
+
+[node name="Mode1Lbl" type="Label" parent="." unique_id=500379871]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 380.0
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("3_gn2ib")
+theme_override_font_sizes/font_size = 52
+text = "COMPETITIVE"
+horizontal_alignment = 1
+script = ExtResource("4_ym3x3")
+variable_type = 2
+variable_name = "mode_text"
+initialize_empty = false
+update_event = "update_mode_1"
+
+[node name="Mode2Lbl" type="Label" parent="." unique_id=900282745]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 460.0
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("3_gn2ib")
+theme_override_font_sizes/font_size = 52
+text = "CO-OPERATIVE"
+horizontal_alignment = 1
+script = ExtResource("4_ym3x3")
+variable_type = 2
+variable_name = "mode_text"
+initialize_empty = false
+update_event = "update_mode_2"
+
+[node name="Mode3Lbl" type="Label" parent="." unique_id=709919862]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 540.0
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+theme_override_fonts/font = ExtResource("3_gn2ib")
+theme_override_font_sizes/font_size = 52
+text = "SINGLE PLAYER"
+horizontal_alignment = 1
+script = ExtResource("4_ym3x3")
+variable_type = 2
+variable_name = "mode_text"
+initialize_empty = false
+update_event = "update_mode_3"
+
+[node name="InstrLbl" type="Label" parent="." unique_id=1289721794]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gn2ib")
+theme_override_font_sizes/font_size = 36
+text = "LEFT FLIPPER TO ROTATE      RIGHT FLIPPER TO SELECT"
+horizontal_alignment = 1

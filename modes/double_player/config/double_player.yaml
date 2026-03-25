@@ -2,7 +2,7 @@
 #this mode is a branch of the "base" mode for a double player game
 
 mode:
-    start_events: carousel_double_player_selected #changed from ball_starting so that the carousel starts with ball starting
+    start_events: carousel_double_player_selected
     priority: 802
 event_player:
     mode_double_player_started:
