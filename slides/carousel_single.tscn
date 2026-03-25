@@ -6,7 +6,7 @@
 
 [node name="carousel_single" type="Control" unique_id=1123827940]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_6xtow")
@@ -45,9 +45,12 @@ text = "COMPETITIVE: 2-PLAYER JOUST"
 horizontal_alignment = 1
 
 [node name="Mode2Lbl" type="Label" parent="." unique_id=1573987394]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-offset_top = 460.0
+offset_top = 452.0
+offset_bottom = 491.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
 theme_override_fonts/font = ExtResource("3_to7co")
 theme_override_font_sizes/font_size = 44
@@ -55,9 +58,15 @@ text = "CO-OPERATIVE: COMBINED SCORE"
 horizontal_alignment = 1
 
 [node name="Mode3Lbl" type="Label" parent="." unique_id=1221847552]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-offset_top = 540.0
+offset_left = 57.999996
+offset_top = 528.00006
+offset_right = 58.0
+offset_bottom = 577.00006
+grow_horizontal = 2
+scale = Vector2(0.89, 0.89)
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_to7co")
 theme_override_font_sizes/font_size = 56
@@ -65,13 +74,20 @@ text = ">> SINGLE PLAYER JOUST <<"
 horizontal_alignment = 1
 
 [node name="InstrLbl" type="Label" parent="." unique_id=849372496]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
+offset_left = 16.0
+offset_top = -41.99994
+offset_right = 74.0
+offset_bottom = 6.000061
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.93, 0.93)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_to7co")
 theme_override_font_sizes/font_size = 36
-text = "LEFT FLIPPER TO ROTATE      RIGHT FLIPPER TO SELECT"
+text = "LEFT FLIPPER TO ROTATE  RIGHT FLIPPER TO SELECT"
 horizontal_alignment = 1

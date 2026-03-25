@@ -6,13 +6,14 @@
 
 [node name="carousel_competitive" type="Control" unique_id=1189425210]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_mx0k1")
 
 [node name="@ColorRect@25571" type="ColorRect" parent="." unique_id=1754111724]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
@@ -35,9 +36,15 @@ text = "SELECT GAME MODE"
 horizontal_alignment = 1
 
 [node name="Mode1Lbl" type="Label" parent="." unique_id=1370075701]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-offset_top = 380.0
+offset_left = 4.000002
+offset_top = 382.0
+offset_right = 140.0
+offset_bottom = 431.0
+grow_horizontal = 2
+scale = Vector2(0.89, 0.89)
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_gopi3")
 theme_override_font_sizes/font_size = 56
@@ -55,9 +62,12 @@ text = "CO-OPERATIVE: COMBINED SCORE"
 horizontal_alignment = 1
 
 [node name="Mode3Lbl" type="Label" parent="." unique_id=458716544]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-offset_top = 540.0
+offset_top = 532.0
+offset_bottom = 579.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
 theme_override_fonts/font = ExtResource("3_gopi3")
 theme_override_font_sizes/font_size = 44
@@ -65,13 +75,20 @@ text = "SINGLE PLAYER JOUST"
 horizontal_alignment = 1
 
 [node name="InstrLbl" type="Label" parent="." unique_id=227214971]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
+offset_left = 16.000004
+offset_top = -42.0
+offset_right = 74.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.93, 0.93)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_gopi3")
 theme_override_font_sizes/font_size = 36
-text = "LEFT FLIPPER TO ROTATE      RIGHT FLIPPER TO SELECT"
+text = "LEFT FLIPPER TO ROTATE  RIGHT FLIPPER TO SELECT"
 horizontal_alignment = 1

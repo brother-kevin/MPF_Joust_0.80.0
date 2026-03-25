@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cgrqqomoe241t"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_wwpch"]
+[ext_resource type="Texture2D" uid="uid://d1nb62wjmfwcj" path="res://images/joust_logo_sm.jpg" id="2_8vfi3"]
+[ext_resource type="FontFile" uid="uid://cg45pkfnkfee0" path="res://fonts/joust.ttf" id="3_fr0gk"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_iw0v3"]
+
+[node name="game_single" type="Control" unique_id=335658251]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_wwpch")
+
+[node name="@ColorRect@20744" type="ColorRect" parent="." unique_id=65065180]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1188394779]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+anchor_right = 1.0
+texture = ExtResource("2_8vfi3")
+stretch_mode = 5
+
+[node name="P1Lbl" type="Label" parent="." unique_id=1519149353]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 300.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_fr0gk")
+theme_override_font_sizes/font_size = 70
+text = "PLAYER 1"
+horizontal_alignment = 1
+
+[node name="TotalScore" type="Label" parent="." unique_id=1929422907]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 400.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_fr0gk")
+theme_override_font_sizes/font_size = 110
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("4_iw0v3")
+variable_name = "total_score"
+comma_separate = true
+initialize_empty = false
+
+[node name="LivesLbl" type="Label" parent="." unique_id=1492897237]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 580.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fr0gk")
+theme_override_font_sizes/font_size = 50
+text = "LIVES"
+horizontal_alignment = 1
+
+[node name="LivesLeft" type="Label" parent="." unique_id=1126469207]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 650.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fr0gk")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("4_iw0v3")
+variable_name = "single_player_lives"
