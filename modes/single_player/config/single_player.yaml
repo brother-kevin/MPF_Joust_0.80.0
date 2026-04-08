@@ -2,7 +2,10 @@
 #this mode is a branch of the "base" mode for a single player game
 
 mode:
-    start_events: carousel_single_player_selected
+    start_events: 
+      - carousel_single_player_selected
+      - mode_single_player_start
+      - ball_started{machine.selected_game_mode=='single_player'}
     priority: 801
 event_player:
     mode_single_player_started:
@@ -128,3 +131,9 @@ variable_player:
         total_egg_bonus:
            int: current_player.p1_egg_bonus + current_player.p2_egg_bonus
            action: set
+
+
+sound_player:
+    mode_single_player_started: 
+      player_start:
+         action: play 

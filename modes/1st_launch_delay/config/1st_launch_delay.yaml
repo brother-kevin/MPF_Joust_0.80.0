@@ -138,3 +138,12 @@ shows:
             transition:
                type: push
                direction: left
+
+
+sound_player:
+    start_sound{count==1}: 
+      GameStartExplosions:
+        action: play
+        events_when_stopped: launch_ball                          
+      player_start:
+        action: stop

@@ -22,14 +22,40 @@ event_player:
     show_carousel_cooperative: {}
   carousel_item_highlighted{item=="single_player"}:
     show_carousel_single: {}
+
+  # Selection events
   carousel_item_selected{item=="double_player"}:
-    carousel_double_player_selected: {}
+    - select_double_player
+    - set_selected_game_mode_competitive
   carousel_item_selected{item=="co-op"}:
-    carousel_co-op_selected: {}
+    - select_co-op_player
+    - set_selected_game_mode_co-op
   carousel_item_selected{item=="single_player"}:
-    carousel_single_player_selected: {}
+    - select_single_player
+    - set_selected_game_mode_single
+
+  # Trigger the game start
   carousel_item_selected:
     s_start_active: {}
+
+  # Map events to mode starts (Original repo style)
+  select_double_player: mode_double_player_start
+  select_co-op_player: mode_co-op_player_start
+  select_single_player: mode_single_player_start
+
+variable_player:
+  set_selected_game_mode_competitive:
+    selected_game_mode:
+      string: double_player
+      action: set_machine
+  set_selected_game_mode_co-op:
+    selected_game_mode:
+      string: co-op
+      action: set_machine
+  set_selected_game_mode_single:
+    selected_game_mode:
+      string: single_player
+      action: set_machine
 
 slide_player:
   # Initial slide on mode start
@@ -72,3 +98,7 @@ slide_player:
       action: play
       priority: 9999
       target: display1
+
+
+sound_player:
+    mode_carousel_started: DrainRollover

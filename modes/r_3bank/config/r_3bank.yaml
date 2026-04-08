@@ -1,7 +1,7 @@
 #config_version=6
 # right 3-Bank drop target mode
 mode:
-    start_events: carousel_item_selected, start_mode_unlimited_multiball
+    start_events: ball_starting, start_mode_unlimited_multiball
     stop_events: round1end, round2end
     priority: 556
 timers:
@@ -276,3 +276,24 @@ show_player:
             show_tokens:
                 ledoff: l_p2_r3b50k, l_p2_r3b100k, l_p2_r3b150k  
 
+
+
+sound_player:
+#Player 1
+    p1_r_3bank_1_shot_hit: RightDropTarget
+    p1_r_3bank_2_shot_hit: RightDropTarget
+    p1_r_3bank_3_shot_hit: RightDropTarget    
+    p1_r_3bank_group_complete:
+        RightDropTarget:
+            action: stop
+        RBankComplete:
+            action: play
+#Player 2
+    p2_r_3bank_1_shot_hit: RightDropTarget
+    p2_r_3bank_2_shot_hit: RightDropTarget
+    p2_r_3bank_3_shot_hit: RightDropTarget    
+    p2_r_3bank_group_complete:
+        RightDropTarget:
+            action: stop
+        RBankComplete:
+            action: play       

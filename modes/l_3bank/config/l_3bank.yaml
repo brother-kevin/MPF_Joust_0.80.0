@@ -1,7 +1,7 @@
 #config_version=6
 # Left 3 bank drop target mode
 mode:
-    start_events: carousel_item_selected, start_mode_unlimited_multiball
+    start_events: ball_starting, start_mode_unlimited_multiball
     stop_events: start_mode_egg_bonus_tally
     priority: 553
 event_player:
@@ -225,3 +225,24 @@ light_player:
         l_p2_3xmulti: black
         l_p2_5xmulti: black
 
+
+
+sound_player:
+#Player 1
+    p1_l_3bank_1_shot_hit: LeftDropTarget
+    p1_l_3bank_2_shot_hit: LeftDropTarget
+    p1_l_3bank_3_shot_hit: LeftDropTarget    
+    p1_l_3bank_group_complete:
+        LeftDropTarget:
+            action: stop
+        LBankComplete:
+            action: play
+#Player 2
+    p2_l_3bank_1_shot_hit: LeftDropTarget
+    p2_l_3bank_2_shot_hit: LeftDropTarget
+    p2_l_3bank_3_shot_hit: LeftDropTarget    
+    p2_l_3bank_group_complete:
+        LeftDropTarget:
+            action: stop
+        LBankComplete:
+            action: play

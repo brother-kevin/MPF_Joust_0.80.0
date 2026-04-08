@@ -3,7 +3,7 @@
 #4-1-2025 removed shows and put them in config file
 
 mode:
-    start_events: carousel_item_selected, start_mode_unlimited_multiball
+    start_events: ball_starting, start_mode_unlimited_multiball
     stop_events: round2end
     priority: 140
     events_when_started: reset_target_tunnel   
@@ -265,7 +265,7 @@ light_player:
 #        l_p2_spinner1k: black 
 #        l_p2_spinner5k: black
 sound_pools:
-    spinner_steps:
+    Spinner:
         load: preload
         type: sequence
         track: sfx
@@ -275,3 +275,16 @@ sound_pools:
         
     
 
+
+
+sound_player:
+#Player 1
+    s_p1_disap_t_1_active: HiddenDrop1
+    s_p1_disap_t_2_active: HiddenDrop2
+    s_p1_disap_t_roll_active: Pterodactyl      
+    s_p1_spin_active: Spinner
+#Player 2
+    s_p2_disap_t_1_active: HiddenDrop1
+    s_p2_disap_t_2_active: HiddenDrop2
+    s_p2_disap_t_roll_active: Pterodactyl      
+    s_p2_spin_active: Spinner

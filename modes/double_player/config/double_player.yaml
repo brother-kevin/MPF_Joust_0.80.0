@@ -2,7 +2,10 @@
 #this mode is a branch of the "base" mode for a double player game
 
 mode:
-    start_events: carousel_double_player_selected
+    start_events: 
+      - carousel_double_player_selected
+      - mode_double_player_start
+      - ball_started{machine.selected_game_mode=='double_player'}
     priority: 802
 event_player:
     mode_double_player_started:
@@ -131,3 +134,9 @@ variable_player:
            int: value
            action: set        
 
+
+
+sound_player:
+    mode_double_player_started: 
+      player_start:
+         action: play   

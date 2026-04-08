@@ -1,7 +1,7 @@
 #config_version=6
 #lavapit mode 
 mode:
-    start_events: carousel_item_selected, start_mode_unlimited_multiball
+    start_events: ball_starting, start_mode_unlimited_multiball
     stop_events: round1end, round2end
     priority: 500
 
@@ -116,3 +116,14 @@ show_player:
                 led: l_p1_eject_hole, l_p2_eject_hole
                 color: tt_blue
             priority: 1
+
+
+sound_player:
+#Player1
+    s_p1_eject_hole_active:
+        EjectHole:
+           action: play      
+#Player2
+    s_p2_eject_hole_active:
+        EjectHole:
+           action: play

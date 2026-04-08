@@ -100,3 +100,7 @@ show_player:
             show_tokens:
                 txt: "{current_player.timer_tunnel_multiball_variable:0>1d}"
             key: timer2            
+
+
+sound_player:
+    timer_tunnel_multiball_tick: TimerPulse

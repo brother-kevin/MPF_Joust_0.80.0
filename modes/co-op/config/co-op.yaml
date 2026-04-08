@@ -2,7 +2,10 @@
 #this mode is a branch of the "base" mode for a cooperative game where the score is combined and the lives are combined
 
 mode:
-    start_events: carousel_co-op_selected
+    start_events: 
+      - carousel_co-op_selected
+      - mode_co-op_player_start
+      - ball_started{machine.selected_game_mode=='co-op'}
     priority: 803
 event_player:
     mode_co-op_started:
@@ -128,3 +131,9 @@ variable_player:
         total_egg_bonus:
            int: current_player.p1_egg_bonus + current_player.p2_egg_bonus
            action: set
+
+
+sound_player:
+    mode_co-op_started: 
+      player_start:
+         action: play   

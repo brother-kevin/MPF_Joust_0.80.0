@@ -1,5 +1,5 @@
 #config_version=6
-#configuraton for hunter, slingshots, and drain
+#configuraton for Hunter, slingshots, and drain
 
 mode:
     start_events: ball_starting, start_mode_unlimited_multiball
@@ -153,3 +153,36 @@ show_player:
             show_tokens:
                 led: l_p2_50k5eggs, l_p2_extra_ball
                 color: black
+
+
+sound_player:
+#Player 1
+    p1_hunter_shot_group_complete: 
+        Hunter:
+            action: stop
+        HunterComplete:
+            action: play        
+    p1_hunter1_shot_hit: Hunter        
+    p1_hunter2_shot_hit: Hunter 
+    p1_hunter3_shot_hit: Hunter
+    s_p1_l_flipper_button_active: FlipperFlap        
+    s_p1_r_flipper_button_active: FlipperFlap
+    s_p1_l_slingshot_active: LeftSling
+    s_p1_r_slingshot_active: RightSling
+    s_p1_r_drain_active: DrainRollover
+    s_p1_trough4_active: BallDrainIntoTrough   
+#Player 2
+    p2_hunter_shot_group_complete: 
+        Hunter:
+            action: stop
+        HunterComplete:
+            action: play        
+    p2_hunter1_shot_hit: Hunter        
+    p2_hunter2_shot_hit: Hunter 
+    p2_hunter3_shot_hit: Hunter               
+    s_p2_l_flipper_button_active: FlipperFlap        
+    s_p2_r_flipper_button_active: FlipperFlap
+    s_p2_l_slingshot_active: LeftSling
+    s_p2_r_slingshot_active: RightSling
+    s_p2_r_drain_active: DrainRollover
+    s_p2_trough4_active: BallDrainIntoTrough 

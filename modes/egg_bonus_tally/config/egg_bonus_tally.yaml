@@ -120,3 +120,30 @@ light_player:
         l_p2_2xmulti: red
         l_p2_3xmulti: red
         l_p2_5xmulti: red 
+
+
+sound_player:
+    play_egg_bonus_sound:  
+      egg_bonus:
+        action: play
+    p1_multiplier_count_down:
+      egg_bonus:
+        action: play
+    timer_p1_egg_bonus_score_complete: 
+      egg_bonus:
+        action: stop
+      Pterodactyl:
+        action: play
+        events_when_stopped: p1_multiplier_count_down           
+    p2_multiplier_count_down:
+      egg_bonus:
+        action: play
+    timer_p2_egg_bonus_score_complete: 
+      egg_bonus:
+        action: stop
+      Pterodactyl:
+        action: play
+        events_when_stopped: p2_multiplier_count_down          
+    egg_bonus_tally_complete:
+      egg_bonus:
+        action: stop           
