@@ -140,3 +140,10 @@ sound_player:
     mode_double_player_started: 
       player_start:
          action: play   
+
+slide_player:
+  mode_double_player_started:
+    game_base:
+      action: play
+      priority: 20000
+      target: display1

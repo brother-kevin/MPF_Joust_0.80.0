@@ -2,7 +2,7 @@
 # Carousel mode: shows game mode menu, A cycles, L selects
 mode:
   start_events: machine_reset_phase_3
-  stop_events: carousel_item_selected
+  stop_events: carousel_item_selected, ball_starting
   code: mpf.modes.carousel.code.carousel.Carousel
   game_mode: false
   priority: 1000

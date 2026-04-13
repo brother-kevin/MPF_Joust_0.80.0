@@ -137,3 +137,10 @@ sound_player:
     mode_single_player_started: 
       player_start:
          action: play 
+
+slide_player:
+  mode_single_player_started:
+    game_single:
+      action: play
+      priority: 20000
+      target: display1

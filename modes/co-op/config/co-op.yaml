@@ -137,3 +137,10 @@ sound_player:
     mode_co-op_started: 
       player_start:
          action: play   
+
+slide_player:
+  mode_co-op_started:
+    game_coop:
+      action: play
+      priority: 20000
+      target: display1
