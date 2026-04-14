@@ -8,7 +8,7 @@ mode:
   priority: 1000
 
 mode_settings:
-  selectable_items: double_player, co-op, single_player, instructions
+  selectable_items: competitive, cooperative, single_player, instructions
   select_item_events: do_select
   next_item_events: do_next
   previous_item_events: s_p1_hunter_bull_3_inactive
@@ -36,9 +36,9 @@ event_player:
   s_p1_r_flipper_button_active{device.state_machines.carousel_tracker.state=="on_game_mode"}: do_select
   s_p1_r_flipper_button_active{device.state_machines.carousel_tracker.state=="on_instructions"}: do_next
 
-  carousel_item_highlighted{item=="double_player"}:
+  carousel_item_highlighted{item=="competitive"}:
     show_carousel_competitive: {}
-  carousel_item_highlighted{item=="co-op"}:
+  carousel_item_highlighted{item=="cooperative"}:
     show_carousel_cooperative: {}
   carousel_item_highlighted{item=="single_player"}:
     show_carousel_single: {}
@@ -46,12 +46,12 @@ event_player:
     show_carousel_instructions: {}
 
   # Selection events
-  carousel_item_selected{item=="double_player"}:
-    - select_double_player
+  carousel_item_selected{item=="competitive"}:
+    - select_competitive
     - set_selected_game_mode_competitive
-  carousel_item_selected{item=="co-op"}:
-    - select_co-op_player
-    - set_selected_game_mode_co-op
+  carousel_item_selected{item=="cooperative"}:
+    - select_cooperative_player
+    - set_selected_game_mode_cooperative
   carousel_item_selected{item=="single_player"}:
     - select_single_player
     - set_selected_game_mode_single
@@ -61,18 +61,18 @@ event_player:
     request_to_start_game: {}
 
   # Map events to mode starts (Original repo style)
-  select_double_player: mode_double_player_start
-  select_co-op_player: mode_co-op_player_start
+  select_competitive: mode_competitive_start
+  select_cooperative_player: mode_cooperative_player_start
   select_single_player: mode_single_player_start
 
 variable_player:
   set_selected_game_mode_competitive:
     selected_game_mode:
-      string: double_player
+      string: competitive
       action: set_machine
-  set_selected_game_mode_co-op:
+  set_selected_game_mode_cooperative:
     selected_game_mode:
-      string: co-op
+      string: cooperative
       action: set_machine
   set_selected_game_mode_single:
     selected_game_mode:

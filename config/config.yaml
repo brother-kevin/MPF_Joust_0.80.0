@@ -991,14 +991,14 @@ flippers:
         main_coil: c_p2_l_flipper
         hold_coil: c_p2_l_flipper_hold
         activation_switch: s_p2_l_flipper_button
-        enable_events: enable_double_player
-        disable_events: disable_double_player, service_mode_entered
+        enable_events: enable_competitive
+        disable_events: disable_competitive, service_mode_entered
     p2_right_flipper:
         main_coil: c_p2_r_flipper
         hold_coil: c_p2_r_flipper_hold
         activation_switch: s_p2_r_flipper_button
-        enable_events: enable_double_player
-        disable_events: disable_double_player, service_mode_entered
+        enable_events: enable_competitive
+        disable_events: disable_competitive, service_mode_entered
     1player_p2_left_flipper:
         main_coil: c_p2_l_flipper
         hold_coil: c_p2_l_flipper_hold
@@ -1217,8 +1217,8 @@ modes:
   - attract
   - base
   - carousel
-  - co-op
-  - double_player
+  - cooperative
+  - competitive
   - egg_bonus
   - egg_bonus_tally
   - game

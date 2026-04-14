@@ -21,7 +21,7 @@ player2_score:
 selected_game_mode:
   expire: null
   expire_secs: null
-  value: double_player
+  value: competitive
 total_score:
   expire: null
   expire_secs: null

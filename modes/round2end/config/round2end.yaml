@@ -8,7 +8,7 @@ mode:
       - disableAutofire #disables the slingshots and flippers
       - disable_p1_flipper
       - disable_single_player
-      - disable_double_player
+      - disable_competitive
       - enable_front_lock
       - enable_back_lock
       - tally_scores 

@@ -3,18 +3,18 @@
 
 mode:
     start_events: 
-      - carousel_double_player_selected
-      - mode_double_player_start
-      - ball_started{machine.selected_game_mode=='double_player'}
+      - carousel_competitive_selected
+      - mode_competitive_start
+      - ball_started{machine.selected_game_mode=='competitive'}
     priority: 802
 event_player:
-    mode_double_player_started:
+    mode_competitive_started:
       - enable_p1_flipper
-      - enable_double_player
+      - enable_competitive
       - enable_prevent_drain       
     mode_unlimited_multiball_started: 
       - enable_p1_flipper
-      - enable_double_player
+      - enable_competitive
     logicblock_lives_front_counter_complete{device.counters.lives_back_counter.value<=0}: round1end
     logicblock_lives_back_counter_complete{device.counters.lives_front_counter.value<=0}: round1end
     p1_disap_t_roll_hit{device.counters.lives_front_counter.value>=1}: 
@@ -53,7 +53,7 @@ counters:
             action: add
             value: 1            
         disable_events: p1_disap_t_roll_hit, mode_single_player_started 
-        enable_events: mode_double_player_started, lives_counter_enable{device.counters.lives_front_counter.value>=1} # added 10-26-2025 and removed: timer_p1_tunnel_multiball_complete{device.counters.lives_front_counter.value > 0}
+        enable_events: mode_competitive_started, lives_counter_enable{device.counters.lives_front_counter.value>=1} # added 10-26-2025 and removed: timer_p1_tunnel_multiball_complete{device.counters.lives_front_counter.value > 0}
         debug: true 
     lives_back_counter:
         count_events: s_p2_trough4_active
@@ -67,7 +67,7 @@ counters:
             action: add
             value: 1    
         disable_events: p2_disap_t_roll_hit, mode_single_player_started 
-        enable_events: mode_double_player_started, lives_counter_enable{device.counters.lives_back_counter.value>=1} # added 10-26-2025 and removed: timer_p2_tunnel_multiball_complete{device.counters.lives_back_counter.value > 0} 
+        enable_events: mode_competitive_started, lives_counter_enable{device.counters.lives_back_counter.value>=1} # added 10-26-2025 and removed: timer_p2_tunnel_multiball_complete{device.counters.lives_back_counter.value > 0} 
     p1_hunter_group_count:
         count_events: p1_hunter_shot_group_complete
         events_when_hit: p1_hunter_group_done
@@ -137,12 +137,12 @@ variable_player:
 
 
 sound_player:
-    mode_double_player_started: 
+    mode_competitive_started: 
       player_start:
          action: play   
 
 slide_player:
-  mode_double_player_started:
+  mode_competitive_started:
     game_base:
       action: play
       priority: 20000

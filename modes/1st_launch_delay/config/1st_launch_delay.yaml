@@ -3,7 +3,7 @@
 # 3-6-2025 Added in launch_timeout timer to automatically launch the ball
 
 mode:
-  start_events: carousel_double_player_selected, carousel_co-op_selected #I may want to split this to two modes if I make a change with single player
+  start_events: carousel_competitive_selected, carousel_cooperative_selected #I may want to split this to two modes if I make a change with single player
   stop_events: playfield_ball_count_change #{balls==1}
   priority: 850
 

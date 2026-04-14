@@ -3,15 +3,15 @@
 
 mode:
     start_events: 
-      - carousel_co-op_selected
-      - mode_co-op_player_start
-      - ball_started{machine.selected_game_mode=='co-op'}
+      - carousel_cooperative_selected
+      - mode_cooperative_player_start
+      - ball_started{machine.selected_game_mode=='cooperative'}
     priority: 803
 event_player:
-    mode_co-op_started:
+    mode_cooperative_started:
       - enable_prevent_drain 
       - enable_p1_flipper
-      - enable_double_player      
+      - enable_competitive      
     logicblock_cooperative_balls_updated{device.counters.cooperative_balls.value==1}: #this is to drain to 1 ball before ending 
       - enable_front_lock
 #      - enable_back_lock #eliminated one of the ball locks for the rare case balls drain at the same time they will lock before the ball count gets to 0
@@ -30,7 +30,7 @@ event_player:
       - disable_back_lock
     mode_unlimited_multiball_started: 
       - enable_p1_flipper
-      - enable_double_player
+      - enable_competitive
     multiball_lock_etm_coop_full:
       - lives_counter_enable
 multiball_locks:    
@@ -58,7 +58,7 @@ counters:
             action: add
             value: 1
         disable_events: start_tunnel_multiball
-        enable_events: mode_co-op_started, lives_counter_enable #{device.counters.cooperative_balls.value > 0} #timer_p1_tunnel_multiball_complete, timer_p2_tunnel_multiball_complete
+        enable_events: mode_cooperative_started, lives_counter_enable #{device.counters.cooperative_balls.value > 0} #timer_p1_tunnel_multiball_complete, timer_p2_tunnel_multiball_complete
         debug: true 
     cooperative_p1_hunter_group_count:
         count_events: p1_hunter_shot_group_complete
@@ -69,7 +69,7 @@ counters:
         count_complete_value: 3
         reset_on_complete: true
         disable_on_complete: false
-        disable_events: mode_single_player_started, mode_double_player_started
+        disable_events: mode_single_player_started, mode_competitive_started
         multiple_hit_window: 500ms               
     cooperative_p2_hunter_group_count:
         count_events: p2_hunter_shot_group_complete
@@ -81,7 +81,7 @@ counters:
         reset_on_complete: true
         disable_on_complete: false
         multiple_hit_window: 500ms
-        disable_events: mode_single_player_started, mode_double_player_started         
+        disable_events: mode_single_player_started, mode_competitive_started         
 show_player:
     player_total_score:
         P1_score:
@@ -134,12 +134,12 @@ variable_player:
 
 
 sound_player:
-    mode_co-op_started: 
+    mode_cooperative_started: 
       player_start:
          action: play   
 
 slide_player:
-  mode_co-op_started:
+  mode_cooperative_started:
     game_coop:
       action: play
       priority: 20000

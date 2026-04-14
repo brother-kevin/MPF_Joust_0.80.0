@@ -67,7 +67,7 @@ counters:
         count_complete_value: 3
         reset_on_complete: true
         disable_on_complete: false
-        disable_events: mode_double_player_started, mode_colab_started
+        disable_events: mode_competitive_started, mode_colab_started
         multiple_hit_window: 500ms               
     single_ p2_hunter_group_count:
         count_events: p2_hunter_shot_group_complete
@@ -79,7 +79,7 @@ counters:
         reset_on_complete: true
         disable_on_complete: false
         multiple_hit_window: 500ms
-        disable_events: mode_double_player_started, mode_colab_started     
+        disable_events: mode_competitive_started, mode_colab_started     
 show_player:
     player_total_score:
         P1_score:

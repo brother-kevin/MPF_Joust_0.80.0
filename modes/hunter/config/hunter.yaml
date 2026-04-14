@@ -5,7 +5,7 @@ mode:
     start_events: ball_starting, start_mode_unlimited_multiball
     stop_events: round1end, round2end
     priority: 178
-#counters: #moved to single_player, double_player, and colab modes
+#counters: #moved to single_player, competitive, and colab modes
 
 shots:
 #Player 1 side
