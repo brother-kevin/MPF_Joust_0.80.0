@@ -1372,3 +1372,5 @@ shows:
             neoSeg2d3:
                 text: (txt)
 virtual_platform_start_active_switches: s_p1_trough1, s_p1_trough2, s_p2_trough1, s_p2_trough2
+event_player:
+  s_end_game_button_active: end_game

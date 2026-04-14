@@ -63,4 +63,32 @@ show_player:
                 led: l_p2_2xmulti, l_p2_hunter1, l_p2_50k5eggs, l_p2_dtl40k, l_p2_collect_egg_bonus, l_p2_r3b50k 
                 ledB: l_p2_3xmulti, l_p2_hunter2, l_p2_extra_ball, l_p2_dtl80k, l_p2_r3b100k, l_p2_release
                 ledC: l_p2_5xmulti, l_p2_hunter3, l_p2_unlimited_balls, l_p2_dtl160k, l_p2_spinner1k, l_p2_r3b150k
-                ledD: l_p2_dtl320k, l_p2_r3b200k, l_p2_release, l_p2_spinner5k 
+                ledD: l_p2_dtl320k, l_p2_r3b200k, l_p2_release, l_p2_spinner5k
+
+slide_player:
+  mode_attract_started:
+    game_base:
+      action: remove
+      target: display1
+    game_coop:
+      action: remove
+      target: display1
+    game_single:
+      action: remove
+      target: display1
+    base:
+      action: remove
+      target: display1
+    carousel_competitive:
+      action: remove
+      target: display1
+    carousel_cooperative:
+      action: remove
+      target: display1
+    carousel_single:
+      action: remove
+      target: display1
+    joust_tips:
+      action: remove
+      target: display1
+

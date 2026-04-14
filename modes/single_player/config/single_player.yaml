@@ -144,3 +144,7 @@ slide_player:
       action: play
       priority: 20000
       target: display1
+  mode_single_player_stopped:
+    game_single:
+      action: remove
+      target: display1

@@ -147,3 +147,7 @@ slide_player:
       action: play
       priority: 20000
       target: display1
+  mode_competitive_stopped:
+    game_base:
+      action: remove
+      target: display1
