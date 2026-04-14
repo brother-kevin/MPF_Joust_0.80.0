@@ -61,15 +61,11 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 57.999996
 offset_top = 528.00006
-offset_right = 58.0
-offset_bottom = 577.00006
 grow_horizontal = 2
-scale = Vector2(0.89, 0.89)
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_to7co")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 50
 text = ">> SINGLE PLAYER JOUST <<"
 horizontal_alignment = 1
 

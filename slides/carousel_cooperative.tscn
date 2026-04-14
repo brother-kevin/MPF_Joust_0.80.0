@@ -48,15 +48,11 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 8.000001
 offset_top = 458.00003
-offset_right = 186.0
-offset_bottom = 507.00003
 grow_horizontal = 2
-scale = Vector2(0.86, 0.86)
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_gpnxf")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 50
 text = ">> CO-OPERATIVE: COMBINED SCORE <<"
 horizontal_alignment = 1
 
