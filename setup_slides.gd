@@ -67,7 +67,7 @@ func _run():
 	var tips_vbox = VBoxContainer.new()
 	tips_vbox.name = "TipsList"
 	tips_vbox.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	tips_vbox.offset_top = 213
+	tips_vbox.offset_top = 280
 	s_tips.add_child(tips_vbox)
 	tips_vbox.owner = s_tips
 
@@ -136,7 +136,7 @@ func _run():
 		p1_lbl.add_theme_font_size_override("font_size", 70)
 		p1_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		p1_lbl.position = Vector2(0, 310)
-		p1_lbl.size = Vector2(576, 100)
+		p1_lbl.size = Vector2(640, 100)
 		s.add_child(p1_lbl)
 		p1_lbl.owner = s
 
@@ -153,7 +153,7 @@ func _run():
 		p1_score.comma_separate = true
 		p1_score.initialize_empty = false
 		p1_score.position = Vector2(0, 420)
-		p1_score.size = Vector2(576, 120)
+		p1_score.size = Vector2(640, 120)
 		s.add_child(p1_score)
 		p1_score.owner = s
 
@@ -165,8 +165,8 @@ func _run():
 		p2_lbl.add_theme_font_override("font", joust_font)
 		p2_lbl.add_theme_font_size_override("font_size", 70)
 		p2_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		p2_lbl.position = Vector2(576, 310)
-		p2_lbl.size = Vector2(576, 100)
+		p2_lbl.position = Vector2(640, 310)
+		p2_lbl.size = Vector2(640, 100)
 		s.add_child(p2_lbl)
 		p2_lbl.owner = s
 
@@ -182,8 +182,8 @@ func _run():
 		p2_score.variable_name = "p2_score"
 		p2_score.comma_separate = true
 		p2_score.initialize_empty = false
-		p2_score.position = Vector2(576, 420)
-		p2_score.size = Vector2(576, 120)
+		p2_score.position = Vector2(640, 420)
+		p2_score.size = Vector2(640, 120)
 		s.add_child(p2_score)
 		p2_score.owner = s
 
@@ -226,7 +226,7 @@ func _run():
 		ResourceSaver.save(res_scene, "res://slides/" + slide_name + ".tscn")
 
 	# --- Carousel Slides (3 variants, one per highlighted mode) ---
-	var mode_names = ["COMPETITIVE: 2-PLAYER JOUST", "CO-OPERATIVE: COMBINED SCORE", "SINGLE PLAYER JOUST"]
+	var mode_names = ["COMPETITIVE: 2-PLAYER JOUST", "CO-OPERATIVE: COMBINED SCORE", "SINGLE PLAYER JOUST", "INSTRUCTIONS"]
 	var slide_names = ["carousel_competitive", "carousel_cooperative", "carousel_single"]
 
 	for idx in range(3):
@@ -262,14 +262,14 @@ func _run():
 		s_car.add_child(header)
 		header.owner = s_car
 
-		# Create 3 mode labels
-		for m in range(3):
+		# Create 4 mode labels
+		for m in range(4):
 			var lbl = Label.new()
 			lbl.name = "Mode%dLbl" % (m + 1)
 			lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			lbl.add_theme_font_override("font", joust_font)
 			lbl.set_anchors_preset(Control.PRESET_TOP_WIDE)
-			lbl.offset_top = 380 + (m * 80)
+			lbl.offset_top = 350 + (m * 75)
 
 			if m == idx:
 				# Highlighted mode — bright yellow, larger, with arrows

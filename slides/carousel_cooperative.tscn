@@ -75,6 +75,19 @@ theme_override_font_sizes/font_size = 44
 text = "SINGLE PLAYER JOUST"
 horizontal_alignment = 1
 
+[node name="Mode4Lbl" type="Label" parent="." unique_id=648191048]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 604.0
+offset_bottom = 650.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_gpnxf")
+theme_override_font_sizes/font_size = 44
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+
 [node name="InstrLbl" type="Label" parent="." unique_id=163608212]
 layout_mode = 1
 anchors_preset = 12

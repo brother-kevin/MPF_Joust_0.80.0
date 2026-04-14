@@ -209,7 +209,7 @@ switches:
         debug: true
     s_p1_r_flipper_button:
         number: A1-B0-3
-        tags: right_flipper, start
+        tags: right_flipper
         debug: true
     s_p2_lane_opto:
         number: A1-B0-4
@@ -1208,7 +1208,8 @@ machine:
 game:
     balls_per_game: 1
     max_players: 1
-    allow_start_with_loose_balls: true #needed to add this for starting in the virtual mode for when the system thinks there are still balls on the playfield
+    allow_start_with_loose_balls: true
+    start_game_event: do_select
     end_game_event: end_game
 modes:
   - tilt

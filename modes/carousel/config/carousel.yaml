@@ -2,26 +2,48 @@
 # Carousel mode: shows game mode menu, A cycles, L selects
 mode:
   start_events: machine_reset_phase_3
-  stop_events: carousel_item_selected, ball_starting
+  stop_events: ball_starting
   code: mpf.modes.carousel.code.carousel.Carousel
   game_mode: false
   priority: 1000
 
 mode_settings:
-  selectable_items: double_player, co-op, single_player
-  select_item_events: s_p1_r_flipper_button_active
-  next_item_events: s_p1_l_flipper_button_active
+  selectable_items: double_player, co-op, single_player, instructions
+  select_item_events: do_select
+  next_item_events: do_next
   previous_item_events: s_p1_hunter_bull_3_inactive
   wrap_items: true
 
+state_machines:
+  carousel_tracker:
+    states:
+      on_game_mode:
+        label: "On Game Mode"
+      on_instructions:
+        label: "On Instructions"
+    starting_state: on_game_mode
+    transitions:
+      - source: on_game_mode
+        target: on_instructions
+        events: carousel_item_highlighted{item=="instructions"}
+      - source: on_instructions
+        target: on_game_mode
+        events: carousel_item_highlighted{item!="instructions"}
+
 # Translate generic carousel events into per-item events
 event_player:
+  s_p1_l_flipper_button_active: do_next
+  s_p1_r_flipper_button_active{device.state_machines.carousel_tracker.state=="on_game_mode"}: do_select
+  s_p1_r_flipper_button_active{device.state_machines.carousel_tracker.state=="on_instructions"}: do_next
+
   carousel_item_highlighted{item=="double_player"}:
     show_carousel_competitive: {}
   carousel_item_highlighted{item=="co-op"}:
     show_carousel_cooperative: {}
   carousel_item_highlighted{item=="single_player"}:
     show_carousel_single: {}
+  carousel_item_highlighted{item=="instructions"}:
+    show_carousel_instructions: {}
 
   # Selection events
   carousel_item_selected{item=="double_player"}:
@@ -35,8 +57,8 @@ event_player:
     - set_selected_game_mode_single
 
   # Trigger the game start
-  carousel_item_selected:
-    s_start_active: {}
+  carousel_item_selected{item!="instructions"}:
+    request_to_start_game: {}
 
   # Map events to mode starts (Original repo style)
   select_double_player: mode_double_player_start
@@ -72,6 +94,9 @@ slide_player:
     carousel_single:
       action: remove
       target: display1
+    joust_tips:
+      action: remove
+      target: display1
     carousel_competitive:
       action: play
       priority: 9999
@@ -81,6 +106,9 @@ slide_player:
       action: remove
       target: display1
     carousel_single:
+      action: remove
+      target: display1
+    joust_tips:
       action: remove
       target: display1
     carousel_cooperative:
@@ -94,7 +122,24 @@ slide_player:
     carousel_cooperative:
       action: remove
       target: display1
+    joust_tips:
+      action: remove
+      target: display1
     carousel_single:
+      action: play
+      priority: 9999
+      target: display1
+  show_carousel_instructions:
+    carousel_competitive:
+      action: remove
+      target: display1
+    carousel_cooperative:
+      action: remove
+      target: display1
+    carousel_single:
+      action: remove
+      target: display1
+    joust_tips:
       action: play
       priority: 9999
       target: display1

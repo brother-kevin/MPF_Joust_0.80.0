@@ -1,59 +1,61 @@
 events:
   game_ended: 3
-  game_started: 79
+  game_started: 87
 missing_switches:
-  s_end_game_button: 17
-  s_launch: 13
-  s_no_default: 79
-  s_p1_disap_t_1: 10
-  s_p1_disap_t_2: 79
-  s_p1_disap_t_roll: 79
-  s_p1_eject_hole: 9
-  s_p1_hunter_bull_2: 8
-  s_p1_hunter_bull_3: 5
-  s_p1_hunter_roll_1: 10
-  s_p1_l_3drop_c: 10
-  s_p1_l_3drop_l: 10
-  s_p1_l_3drop_r: 10
-  s_p1_l_flipper_button: 10
-  s_p1_l_flipper_button_far: 10
-  s_p1_l_slingshot: 5
-  s_p1_r_3drop_l: 5
-  s_p1_r_3drop_r: 5
-  s_p1_r_drain: 4
-  s_p1_r_flipper_button_far: 10
-  s_p1_r_slingshot: 4
-  s_p1_spin: 10
-  s_p1_trough1: 5
-  s_p1_trough2: 4
-  s_p1_trough3: 19
-  s_p1_trough4: 19
-  s_p1_trough_jam: 5
-  s_p2_disap_t_1: 19
-  s_p2_disap_t_2: 79
-  s_p2_disap_t_roll: 79
-  s_p2_hunter_bull_2: 79
-  s_p2_hunter_bull_3: 19
-  s_p2_hunter_roll_1: 10
-  s_p2_l_3drop_c: 79
-  s_p2_l_3drop_l: 79
-  s_p2_l_3drop_r: 79
-  s_p2_l_flipper_button: 79
-  s_p2_l_flipper_button_far: 79
-  s_p2_l_slingshot: 10
-  s_p2_r_3drop_c: 4
-  s_p2_r_3drop_l: 4
-  s_p2_r_3drop_r: 4
-  s_p2_r_drain: 3
-  s_p2_r_flipper_button: 4
-  s_p2_r_flipper_button_far: 79
+  s_end_game_button: 25
+  s_launch: 21
+  s_no_default: 87
+  s_p1_disap_t_1: 18
+  s_p1_disap_t_2: 3
+  s_p1_disap_t_roll: 87
+  s_p1_eject_hole: 3
+  s_p1_hunter_bull_2: 16
+  s_p1_hunter_bull_3: 13
+  s_p1_hunter_roll_1: 18
+  s_p1_l_3drop_c: 18
+  s_p1_l_3drop_l: 18
+  s_p1_l_3drop_r: 18
+  s_p1_l_flipper_button: 1
+  s_p1_l_flipper_button_far: 18
+  s_p1_l_slingshot: 3
+  s_p1_r_3drop_l: 3
+  s_p1_r_3drop_r: 13
+  s_p1_r_drain: 12
+  s_p1_r_flipper_button: 1
+  s_p1_r_flipper_button_far: 18
+  s_p1_r_slingshot: 12
+  s_p1_spin: 18
+  s_p1_trough1: 3
+  s_p1_trough2: 12
+  s_p1_trough3: 27
+  s_p1_trough4: 27
+  s_p1_trough_jam: 3
+  s_p2_disap_t_1: 27
+  s_p2_disap_t_2: 87
+  s_p2_disap_t_roll: 87
+  s_p2_eject_hole: 8
+  s_p2_hunter_bull_2: 87
+  s_p2_hunter_bull_3: 27
+  s_p2_hunter_roll_1: 18
+  s_p2_l_3drop_c: 87
+  s_p2_l_3drop_l: 87
+  s_p2_l_3drop_r: 87
+  s_p2_l_flipper_button: 87
+  s_p2_l_flipper_button_far: 87
+  s_p2_l_slingshot: 3
+  s_p2_r_3drop_c: 3
+  s_p2_r_3drop_l: 12
+  s_p2_r_drain: 11
+  s_p2_r_flipper_button: 12
+  s_p2_r_flipper_button_far: 87
   s_p2_r_slingshot: 3
-  s_p2_spin: 12
-  s_p2_trough1: 79
-  s_p2_trough2: 79
-  s_p2_trough3: 79
-  s_p2_trough4: 79
-  s_p2_trough_jam: 79
+  s_p2_spin: 20
+  s_p2_trough1: 87
+  s_p2_trough2: 87
+  s_p2_trough3: 87
+  s_p2_trough4: 87
+  s_p2_trough_jam: 87
+  s_start: 8
 player:
   score:
     average: 0
@@ -65,52 +67,54 @@ player:
     - 0
     total: 5
 shots:
+  p1_disap_t_2: 1
+  p1_eject_hole_shot: 1
   p1_hunter1_shot: 8
   p1_hunter2_shot: 2
   p1_hunter3_shot: 6
-  p1_r_3bank_1_shot: 1
-  p1_r_3bank_2_shot: 3
+  p1_r_3bank_1_shot: 2
+  p1_r_3bank_2_shot: 5
   p1_r_3bank_3_shot: 1
   p1_r_drain_shot: 2
   p2_eject_hole_shot: 1
   p2_hunter1_shot: 1
   p2_hunter3_shot: 1
   p2_r_3bank_1_shot: 1
-  p2_r_3bank_2_shot: 1
-  p2_r_3bank_3_shot: 1
+  p2_r_3bank_2_shot: 2
+  p2_r_3bank_3_shot: 3
   p2_r_drain_shot: 2
 switches:
   s_end_game_button: 3
   s_launch: 5
   s_no_default: 0
   s_p1_disap_t_1: 12
-  s_p1_disap_t_2: 0
+  s_p1_disap_t_2: 1
   s_p1_disap_t_roll: 0
-  s_p1_eject_hole: 6
+  s_p1_eject_hole: 7
   s_p1_hunter_bull_2: 2
   s_p1_hunter_bull_3: 7
   s_p1_hunter_roll_1: 8
   s_p1_l_3drop_c: 3
   s_p1_l_3drop_l: 3
   s_p1_l_3drop_r: 3
-  s_p1_l_flipper_button: 167
+  s_p1_l_flipper_button: 174
   s_p1_l_flipper_button_far: 99
-  s_p1_l_slingshot: 238
-  s_p1_lane_opto: 69
-  s_p1_launcher: 81
-  s_p1_r_3drop_c: 16
-  s_p1_r_3drop_l: 7
+  s_p1_l_slingshot: 239
+  s_p1_lane_opto: 77
+  s_p1_launcher: 90
+  s_p1_r_3drop_c: 20
+  s_p1_r_3drop_l: 8
   s_p1_r_3drop_r: 10
   s_p1_r_drain: 2
-  s_p1_r_flipper_button: 174
+  s_p1_r_flipper_button: 178
   s_p1_r_flipper_button_far: 59
   s_p1_r_slingshot: 39
   s_p1_spin: 16
-  s_p1_trough1: 6
+  s_p1_trough1: 7
   s_p1_trough2: 4
   s_p1_trough3: 1
   s_p1_trough4: 1
-  s_p1_trough_jam: 4
+  s_p1_trough_jam: 5
   s_p2_disap_t_1: 1
   s_p2_disap_t_2: 0
   s_p2_disap_t_roll: 0
@@ -123,16 +127,16 @@ switches:
   s_p2_l_3drop_r: 0
   s_p2_l_flipper_button: 0
   s_p2_l_flipper_button_far: 0
-  s_p2_l_slingshot: 178
-  s_p2_lane_opto: 68
-  s_p2_launcher: 74
-  s_p2_r_3drop_c: 1
+  s_p2_l_slingshot: 179
+  s_p2_lane_opto: 76
+  s_p2_launcher: 82
+  s_p2_r_3drop_c: 2
   s_p2_r_3drop_l: 2
-  s_p2_r_3drop_r: 1
+  s_p2_r_3drop_r: 5
   s_p2_r_drain: 2
   s_p2_r_flipper_button: 1
   s_p2_r_flipper_button_far: 0
-  s_p2_r_slingshot: 2
+  s_p2_r_slingshot: 3
   s_p2_spin: 1
   s_p2_trough1: 0
   s_p2_trough2: 0
