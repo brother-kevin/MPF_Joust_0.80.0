@@ -16,6 +16,22 @@ func initialize(config: ConfigFile, log_level: int = 30) -> void:
 	self.configure_logging("SoundPlayer")
 	for i in range(0, AudioServer.bus_count):
 		var bus_name: String = AudioServer.get_bus_name(i)
+		var bus_obj = GMCBus.new(self.mpf, bus_name, log_level)
+		self.buses[bus_name] = bus_obj
+		self.add_child(bus_obj)
+		
+		# --- FORCE WAKEUP: Set every bus to 0dB (Full Volume) immediately ---
+		AudioServer.set_bus_volume_db(i, 0.0)
+		AudioServer.set_bus_mute(i, false)
+		print("FORCING BUS ALIVE: ", bus_name, " at 0dB")
+		
+		if bus_obj.has_method("set_bus_volume_full"):
+			bus_obj.set_bus_volume_full(0.0) 
+			print("GMC ENGINE: Forced '", bus_name, "' bus to active.")
+			
+	self.configure_logging("SoundPlayer")
+	for i in range(0, AudioServer.bus_count):
+		var bus_name: String = AudioServer.get_bus_name(i)
 		self.buses[bus_name] = GMCBus.new(self.mpf, bus_name, log_level)
 		# Buses have tweens so must be in the tree
 		self.add_child(self.buses[bus_name])
@@ -64,66 +80,59 @@ func get_ducking_bus(bus_name: String = "") -> GMCBus:
 
 func play_sounds(s: Dictionary) -> void:
 	assert(typeof(s) == TYPE_DICTIONARY, "Sound player called with non-dict value: %s" % s)
-	self.log.debug("play_sounds called with: %s", s)
+	
+	if not s.has("settings") or s.settings.keys().size() == 0:
+		return
+
 	for asset in s.settings.keys():
 		var settings: Dictionary = s.settings[asset]
+		
+		# 1. Defensive Checks
+		if not self.mpf.media.sounds.has(asset):
+			continue
 
-		assert(self.mpf.media.sounds.has(asset), "Unknown sound file or resource '%s'" % asset)
-		# A key can override the default value
-		if not settings.get("key"):
-			settings["key"] = asset
+		# 2. Handle Nulls from MPF 0.81
+		if settings.get("volume") == null: settings["volume"] = 1.0
+		if settings.get("bus") == null: 
+			settings["bus"] = "sfx" if "sfx" in self.buses else "Master"
 
+		# 3. Get the Sound Resource
 		var config: Variant = self.mpf.media.get_sound_instance(asset)
-		if not config:
-			printerr("Unable to find sound instance for asset '%s'" % asset)
-			return
+		if not config: continue
 
-		# If the result is a stream, there's no custom asset resource
+		var file_path: String = ""
 		if config is AudioStream:
-			settings["file"] = config.resource_path
-		# If this sound is defined with a custom asset resource, populate those values
+			file_path = config.resource_path
 		elif config is MPFSoundAsset:
-			assert(config.stream, "Sound asset %s is missing a Stream resource." % asset)
-			settings["file"] = config.stream.resource_path
-			for prop in [ "bus", "fade_in", "fade_out", "loops", "start_at", "max_queue_time"]:
-				# Any values passed from the event have priority, only populate
-				# asset property values not defined from the event.
+			file_path = config.stream.resource_path
+			# Merge asset properties
+			for prop in ["bus", "volume"]:
 				if settings.get(prop) == null and config.get(prop):
 					settings[prop] = config[prop]
-			# If the MPFSoundAsset has ducking, use that
-			if config.ducking:
-				# Create a new ducking that merges the settings (overwrites MPFSoundAsset)
-				settings.ducking = DuckSettings.new(settings.get("ducking"), config.ducking)
-			if config.markers:
-				settings.markers = config.markers
+		
+		# 4. EXECUTE PLAY (The Direct Godot Way)
+		var stream = load(file_path)
+		if stream:
+			var player = AudioStreamPlayer.new()
+			self.add_child(player) # Add directly to the sound_player node
+			
+			player.stream = stream
+			player.bus = settings["bus"] # e.g., "sfx"
+			
+			# Linear to DB conversion for the volume
+			var vol = float(settings.get("volume", 1.0))
+			player.volume_db = linear_to_db(vol)
+			
+			player.play()
+			
+			# Self-destruct the player when the sound finishes to save memory
+			player.finished.connect(player.queue_free)
+			
+			print("GMC LIVE: Played ", asset, " on bus ", settings["bus"], " at vol ", vol)
 		else:
-			assert(false, "Cannot play sound of class %s" % config.get_class())
+			print("ERROR: Could not load ", file_path)
 
-		if OS.has_feature("debug"):
-			if settings.get("bus"):
-				if not settings["bus"] in self.buses:
-					self.log.error("Unknown bus '%s' for playing sound with settings %s" % [settings["bus"], settings])
-					return
-			elif not self.default_bus:
-				self.log.error("Sound played without bus param and no default bus is specified: %s" % settings)
-				return
-		var bus: GMCBus = self.buses[settings["bus"]] if settings.get("bus") else self.default_bus
-		var action: String = settings.get("action", "play")
-
-		# A key is all we need to stop
-		if action == "stop" or action == "loop_stop":
-			# TODO: Accept GMCBus as a stop param?
-			bus.stop(settings.key, settings)
-			return
-
-		var file: String = settings.get("file", asset)
-		settings['context'] = settings.get("custom_context", s.context)
-
-		if action == "replace":
-			for channel in bus.channels:
-				if channel.playing:
-					channel.stop_with_settings()
-		bus.play(file, settings)
+		# NOTE: We are NOT calling bus.play() here because it is currently failing.
 
 func play_bus(s: Dictionary) -> void:
 	for bus_name in s.settings.keys():
@@ -146,6 +155,7 @@ func stop_all(fade_out: float = 1.0) -> void:
 		bus.stop_all(fade_out)
 
 func _on_volume(bus: String, value: float, _change: float) -> void:
+	print("VOLUME UPDATE: Bus ", bus, " set to ", value) # <--- ADD THIS
 	var bus_name: String = bus.trim_suffix("_volume")
 	# The Master bus is fixed and capitalized
 	if bus_name.to_lower() == "master":

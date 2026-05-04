@@ -23,9 +23,18 @@ buses/default_bus_layout="uid://b8wr0hwoqop4v"
 
 MPF="*uid://c05iybd1a77mc"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=768
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/mpf-gmc/plugin.cfg")
+
+[gmc]
+
+mpf_project_path="/home/pacific_pinball/joust"
 
 [input]
 
@@ -67,9 +76,3 @@ s_end_game_button={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=768
-window/size/mode=0

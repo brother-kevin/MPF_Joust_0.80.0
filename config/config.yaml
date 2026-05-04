@@ -9,6 +9,13 @@ hardware:
     driverboards: pdb
     lights: opp
     segment_displays: light_segment_displays
+bcp:
+  connections:
+    local_display:
+      type: mpf.core.bcp.bcp_socket_client.BCPClientSocket
+      host: 127.0.0.1
+      port: 5050
+      exit_on_close: false # Prevents MPF from crashing when you stop Godot
 opp:
     ports: COM3
     debug: true
@@ -27,6 +34,7 @@ config:
    - neoSeg_2dig_3.yaml
    - cabinet_lights.yaml
 sound_system:
+    master_volume: 1.0
     tracks:
        music:
           type: standard
@@ -117,7 +125,6 @@ machine_vars:
     selected_game_mode:
         initial_value: "none"
         value_type: str
-#    master_volume: 0.75
 logging:
   console_log: info
   file_log: info

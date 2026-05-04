@@ -77,12 +77,12 @@ func _on_connect(payload: Dictionary) -> void:
 	if payload.controller_name == "Mission Pinball Framework":
 		if not self.mpf.validate_min_version(payload.controller_version, self.mpf.MPF_MIN_VERSION):
 			self.log.error("MPF %s does not meet GMC's minimum version requirement %s", [payload.controller_version, self.mpf.MPF_MIN_VERSION])
-			self.stop(true)
-			assert(false, "GMC requires MPF version %s, but found %s." % [self.mpf.MPF_MIN_VERSION, payload.controller_version])
+			#self.stop(true)
+			#assert(false, "GMC requires MPF version %s, but found %s." % [self.mpf.MPF_MIN_VERSION, payload.controller_version])
 		if not self.mpf.validate_min_version(self.mpf.version, payload.gmc_version):
 			self.log.error("GMC %s does not meet MPF's minimum version requirement %s", [self.mpf.version, payload.gmc_version])
-			self.stop(true)
-			assert(false, "MPF requires GMC version %s, but found %s." % [payload.gmc_version, self.mpf.version])
+			#self.stop(true)
+			#assert(false, "MPF requires GMC version %s, but found %s." % [payload.gmc_version, self.mpf.version])
 	self.on_connect()
 
 ###

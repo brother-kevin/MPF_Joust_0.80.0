@@ -87,11 +87,19 @@ slide_player:
   mode_base_started: base
 
 sound_player:
-  ball_started: GameStartExplosions
-  s_p1_l_flipper_button_active: FlipperFlap
-  s_p1_r_flipper_button_active: FlipperFlap
-  s_p1_l_flipper_button_far_active: FlipperFlap
-  s_p1_r_flipper_button_far_active: FlipperFlap
-  s_p2_l_flipper_button_active: FlipperFlap
-  s_p2_r_flipper_button_active: FlipperFlap
-  ball_drain: BallDrainIntoTrough
+  ball_started:
+    GameStartExplosions:
+      volume: 0.8
+      bus: sfx
+  s_p1_l_flipper_button_active:
+    FlipperFlap:
+      volume: 0.5
+      bus: sfx
+  s_p1_r_flipper_button_active:
+    FlipperFlap:
+      volume: 0.5
+      bus: sfx
+  ball_drain:
+    BallDrainIntoTrough:
+      volume: 0.8
+      bus: sfx
